@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://povmknhvdddf"]
+
+[ext_resource type="PackedScene" uid="uid://isd3o7ji1m5j" path="res://Scenes/Track.tscn" id="1_ccbmd"]
+[ext_resource type="PackedScene" uid="uid://jvakchg2s8i4" path="res://Scenes/TrackSwitch.tscn" id="2_858tu"]
+[ext_resource type="PackedScene" uid="uid://c2qsc24ng38ir" path="res://Scenes/TrainEngine.tscn" id="3_fimsf"]
+
+[sub_resource type="Curve2D" id="Curve2D_858tu"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, -242.14874, -4.9586773, 242.14874, 4.9586773, 256, 115, -258.45227, -1.5026295, 258.45227, 1.5026295, 712, 204)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_fimsf"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 192, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_3g60v"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 192, 0)
+}
+point_count = 2
+
+[node name="Game" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Track" parent="." instance=ExtResource("1_ccbmd")]
+position = Vector2(-500, -222)
+curve = SubResource("Curve2D_858tu")
+
+[node name="TrackSwitch" parent="." instance=ExtResource("2_858tu")]
+position = Vector2(212, -19)
+
+[node name="Track2" parent="." instance=ExtResource("1_ccbmd")]
+position = Vector2(340, 13)
+curve = SubResource("Curve2D_fimsf")
+
+[node name="Track3" parent="." instance=ExtResource("1_ccbmd")]
+position = Vector2(341, -51)
+curve = SubResource("Curve2D_3g60v")
+
+[node name="TrainEngine" parent="." instance=ExtResource("3_fimsf")]
+position = Vector2(-248, -105)
