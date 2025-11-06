@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://povmknhvdddf"]
 
-[ext_resource type="Script" uid="uid://br70dt428wdc5" path="res://Scripts/game.gd" id="1_55g6r"]
+[ext_resource type="Script" uid="uid://br70dt428wdc5" path="res://GameScripts/game.gd" id="1_55g6r"]
 [ext_resource type="PackedScene" uid="uid://isd3o7ji1m5j" path="res://Scenes/Track.tscn" id="1_ccbmd"]
 [ext_resource type="PackedScene" uid="uid://jvakchg2s8i4" path="res://Scenes/TrackSwitch.tscn" id="2_858tu"]
 [ext_resource type="PackedScene" uid="uid://bjqtvbefblx2e" path="res://Scenes/TrainVehicle.tscn" id="2_q6okl"]
