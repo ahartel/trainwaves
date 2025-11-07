@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2qsc24ng38ir"]
+[gd_scene load_steps=5 format=3 uid="uid://c2qsc24ng38ir"]
 
 [ext_resource type="PackedScene" uid="uid://bjqtvbefblx2e" path="res://Scenes/TrainVehicle.tscn" id="1"]
-[ext_resource type="Script" path="res://Scripts/TrainEngine.gd" id="2"]
+[ext_resource type="Script" uid="uid://bxclh42lhf8mt" path="res://Scripts/TrainEngine.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://cvutg2fumvmco" path="res://Assets/train_engine.png" id="3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ve4fm"]
+size = Vector2(80, 18)
 
 [node name="TrainEngine" groups=["train_engines"] instance=ExtResource("1")]
 script = ExtResource("2")
@@ -18,3 +21,9 @@ brake_application_speed = 5.0
 
 [node name="TextureRect" parent="Body/Node2D2" index="0"]
 texture = ExtResource("3")
+
+[node name="Area2D" type="Area2D" parent="." index="3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(30, 0)
+shape = SubResource("RectangleShape2D_ve4fm")
