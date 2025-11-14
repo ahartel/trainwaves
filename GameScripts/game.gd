@@ -6,7 +6,7 @@ extends Node2D
 @onready var engine : TrainEngine = $TrainEngine
 
 func _setup_train():
-	engine.add_to_track($Tracks/Track)
+	engine.add_to_track($Tracks/Track3)
 	engine.velocity = 2.0
 	engine.target_force_percent = 0.4
 	engine.mass = 1.0

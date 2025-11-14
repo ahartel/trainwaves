@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://povmknhvdddf"]
+[gd_scene load_steps=12 format=3 uid="uid://povmknhvdddf"]
 
 [ext_resource type="Script" uid="uid://br70dt428wdc5" path="res://GameScripts/game.gd" id="1_55g6r"]
 [ext_resource type="PackedScene" uid="uid://isd3o7ji1m5j" path="res://Scenes/Track.tscn" id="1_ccbmd"]
@@ -6,23 +6,38 @@
 [ext_resource type="PackedScene" uid="uid://c2qsc24ng38ir" path="res://Scenes/TrainEngine.tscn" id="3_fimsf"]
 [ext_resource type="PackedScene" uid="uid://dk4kss5yu35xs" path="res://Scenes/components/player_control_component.tscn" id="4_3g60v"]
 [ext_resource type="PackedScene" uid="uid://bj73jaifiuved" path="res://GameScenes/station.tscn" id="6_q6okl"]
+[ext_resource type="PackedScene" uid="uid://jvakchg2s8i4" path="res://Scenes/TrackSwitch.tscn" id="7_rcqf4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6okl"]
 size = Vector2(80, 16)
 
+[sub_resource type="Curve2D" id="Curve2D_g60ea"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(-138, 12, 138, -12, -453, -202, -128, 2, 128, -2, -228, -285, 0, 0, 0, 0, 808, -289)
+}
+point_count = 3
+
 [sub_resource type="Curve2D" id="Curve2D_858tu"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(-242.14874, -4.9586773, 242.14874, 4.9586773, -404.66418, 179, -210.62962, -14, 210.62962, 14, 11.488831, 197, -173.5945, -0.4131359, 173.5945, 0.4131359, 842.51843, 205, -258.4873, -8.0217, 258.4873, 8.0217, 1908.432, 219)
+"points": PackedVector2Array(-248.2418, 10.74091, 248.2418, -10.74091, 116.165405, 113, -593.5772, -3.413136, 0, 0, 842.51843, 205, 0, 0, 258.4873, 8.0217, 1784.6073, 200)
 }
-point_count = 4
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_q3a5i"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -624, -72, 0, 0, 0, 0, -184, -73)
+}
+point_count = 2
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_55g6r")
 train_vehicle_reference = ExtResource("2_q6okl")
 
 [node name="TrainEngine" parent="." instance=ExtResource("3_fimsf")]
-position = Vector2(-768, -70)
+position = Vector2(-982, -173)
 
 [node name="PlayerControlComponent" parent="TrainEngine" instance=ExtResource("4_3g60v")]
 
@@ -35,10 +50,24 @@ position = Vector2(28, -1)
 
 [node name="Tracks" type="Node2D" parent="."]
 
+[node name="Track2" parent="Tracks" instance=ExtResource("1_ccbmd")]
+position = Vector2(0, -1)
+curve = SubResource("Curve2D_g60ea")
+
 [node name="Track" parent="Tracks" instance=ExtResource("1_ccbmd")]
 position = Vector2(-542, -252)
 scale = Vector2(0.7833656, 1)
 curve = SubResource("Curve2D_858tu")
 
+[node name="Track3" parent="Tracks" instance=ExtResource("1_ccbmd")]
+position = Vector2(-400, -100)
+curve = SubResource("Curve2D_q3a5i")
+
 [node name="Station" parent="." instance=ExtResource("6_q6okl")]
 position = Vector2(115, -66)
+
+[node name="Station2" parent="." instance=ExtResource("6_q6okl")]
+position = Vector2(115, -302)
+
+[node name="TrackSwitch" parent="." instance=ExtResource("7_rcqf4")]
+position = Vector2(-581, -171)
