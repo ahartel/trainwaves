@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://p0le2l72spk1"]
+
+[ext_resource type="Script" uid="uid://ba08226mgu8sp" path="res://GameScenes/train_sink.gd" id="1_51p80"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lyfsl"]
+
+[node name="TrainSink" type="Node2D"]
+script = ExtResource("1_51p80")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_lyfsl")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

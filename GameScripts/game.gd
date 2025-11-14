@@ -18,6 +18,7 @@ func _setup_train():
 		car.mass = 1.0
 		car.change_towed_mass(0)
 		add_child(car)
+		car.add_to_group("train_waggons")
 		last_car.set_follower_car(car)
 		last_car = car
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://povmknhvdddf"]
+[gd_scene load_steps=13 format=3 uid="uid://povmknhvdddf"]
 
 [ext_resource type="Script" uid="uid://br70dt428wdc5" path="res://GameScripts/game.gd" id="1_55g6r"]
 [ext_resource type="PackedScene" uid="uid://isd3o7ji1m5j" path="res://Scenes/Track.tscn" id="1_ccbmd"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dk4kss5yu35xs" path="res://Scenes/components/player_control_component.tscn" id="4_3g60v"]
 [ext_resource type="PackedScene" uid="uid://bj73jaifiuved" path="res://GameScenes/station.tscn" id="6_q6okl"]
 [ext_resource type="PackedScene" uid="uid://jvakchg2s8i4" path="res://Scenes/TrackSwitch.tscn" id="7_rcqf4"]
+[ext_resource type="PackedScene" uid="uid://p0le2l72spk1" path="res://GameScenes/train_sink.tscn" id="8_g60ea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6okl"]
 size = Vector2(80, 16)
@@ -14,21 +15,21 @@ size = Vector2(80, 16)
 [sub_resource type="Curve2D" id="Curve2D_g60ea"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(-138, 12, 138, -12, -453, -202, -128, 2, 128, -2, -228, -285, 0, 0, 0, 0, 808, -289)
+"points": PackedVector2Array(-138, 12, 138, -12, -453, -202, -128, 2, 128, -2, -228, -285, 0, 0, 0, 0, 1219, -284)
 }
 point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_858tu"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(-248.2418, 10.74091, 248.2418, -10.74091, 116.165405, 113, -593.5772, -3.413136, 0, 0, 842.51843, 205, 0, 0, 258.4873, 8.0217, 1784.6073, 200)
+"points": PackedVector2Array(-248.2418, 10.74091, 248.2418, -10.74091, 116.165405, 113, -593.5772, -3.413136, 0, 0, 842.51843, 205, 0, 0, 258.4873, 8.0217, 2250.5454, 195)
 }
 point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_q3a5i"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -624, -72, 0, 0, 0, 0, -184, -73)
+"points": PackedVector2Array(0, 0, 0, 0, -624, -72, 0, 0, 0, 0, -182, -71)
 }
 point_count = 2
 
@@ -41,12 +42,11 @@ position = Vector2(-982, -173)
 
 [node name="PlayerControlComponent" parent="TrainEngine" instance=ExtResource("4_3g60v")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TrainEngine"]
+[node name="Area2D2" type="Area2D" parent="TrainEngine"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrainEngine/Area2D2"]
 position = Vector2(30, 0)
 shape = SubResource("RectangleShape2D_q6okl")
-
-[node name="Camera2D" type="Camera2D" parent="TrainEngine"]
-position = Vector2(28, -1)
 
 [node name="Tracks" type="Node2D" parent="."]
 
@@ -71,3 +71,13 @@ position = Vector2(115, -302)
 
 [node name="TrackSwitch" parent="." instance=ExtResource("7_rcqf4")]
 position = Vector2(-581, -171)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-90, -161)
+zoom = Vector2(0.75, 0.75)
+
+[node name="TrainSink" parent="." instance=ExtResource("8_g60ea")]
+position = Vector2(1192, -57)
+
+[node name="TrainSink2" parent="." instance=ExtResource("8_g60ea")]
+position = Vector2(1188, -287)

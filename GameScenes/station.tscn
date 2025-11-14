@@ -31,6 +31,21 @@ shape = SubResource("RectangleShape2D_q8f6j")
 [node name="Timer" type="Timer" parent="StationExit"]
 one_shot = true
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 50
+lifetime = 3.0
+one_shot = true
+emission_shape = 3
+emission_rect_extents = Vector2(100, 10)
+direction = Vector2(0, -1)
+gravity = Vector2(0, 98)
+initial_velocity_min = 247.42
+initial_velocity_max = 329.9
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+color = Color(0, 0.6189523, 0.096299745, 1)
+
 [connection signal="area_entered" from="StationEnter" to="StationEnter" method="_on_area_entered"]
 [connection signal="area_entered" from="StationExit" to="StationExit" method="_on_area_entered"]
 [connection signal="timeout" from="StationExit/Timer" to="StationExit" method="_on_timer_timeout"]
