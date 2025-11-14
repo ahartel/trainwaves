@@ -15,7 +15,7 @@ size = Vector2(37, 19)
 script = ExtResource("1_q8f6j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StationEnter"]
-position = Vector2(-608, 16.5)
+position = Vector2(-179, 16.5)
 shape = SubResource("RectangleShape2D_5tskr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -25,7 +25,7 @@ texture = ExtResource("1_5tskr")
 script = ExtResource("3_nb5dc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StationExit"]
-position = Vector2(115, 16)
+position = Vector2(140, 16)
 shape = SubResource("RectangleShape2D_q8f6j")
 
 [node name="Timer" type="Timer" parent="StationExit"]

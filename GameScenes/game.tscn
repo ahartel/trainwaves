@@ -21,8 +21,6 @@ point_count = 4
 script = ExtResource("1_55g6r")
 train_vehicle_reference = ExtResource("2_q6okl")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="TrainEngine" parent="." instance=ExtResource("3_fimsf")]
 position = Vector2(-768, -70)
 
@@ -31,6 +29,9 @@ position = Vector2(-768, -70)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrainEngine"]
 position = Vector2(30, 0)
 shape = SubResource("RectangleShape2D_q6okl")
+
+[node name="Camera2D" type="Camera2D" parent="TrainEngine"]
+position = Vector2(28, -1)
 
 [node name="Tracks" type="Node2D" parent="."]
 
