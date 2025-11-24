@@ -28,3 +28,10 @@ In later versions of the game, there might be more complex behavior for the peop
 In later versions of the game, there might be some unexpected events happening, like train delays, track blockages, broken signals and switches.
 
 Harder levels have more complex track layouts, more trains, more people and tighter schedules.
+
+## Implementation details
+
+These examples were very helpful:
+
+- https://bevy.org/examples/math/cubic-splines/
+- https://bevy.org/examples/2d-rendering/2d-shapes/
